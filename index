@@ -1,0 +1,181 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia de Aprendizaje - Paula</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f1f5f9;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .handwriting {
+            font-family: 'Caveat', cursive;
+        }
+
+        /* Estilo simulador de scrapbook */
+        .scrapbook-page {
+            background-color: #fffcf8;
+            border: 8px solid #ffffff;
+            outline: 3px dashed #14b8a6;
+            outline-offset: -10px;
+        }
+
+        /* Reglas de impresión A4 profesional */
+        @media print {
+            body {
+                background: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .scrapbook-page {
+                border: none !important;
+                outline: 3px dashed #14b8a6 !important;
+                box-shadow: none !important;
+                width: 210mm;
+                height: 297mm;
+                padding: 15mm !important;
+                margin: 0 !important;
+                page-break-inside: avoid;
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8 flex flex-col items-center justify-center gap-6">
+
+    <!-- Botón interactivo para exportar a PDF (Se ocultará automáticamente al imprimir/guardar) -->
+    <div class="no-print w-full max-w-4xl flex justify-end">
+        <button onclick="window.print()" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3.5 px-8 rounded-full shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer">
+            <i class="fa-solid fa-file-pdf text-xl"></i>
+            <span>Guardar como PDF / Imprimir</span>
+        </button>
+    </div>
+
+    <!-- Hoja de Portafolio (Formato exacto A4) -->
+    <div class="max-w-4xl w-full scrapbook-page rounded-2xl shadow-2xl p-8 md:p-12 relative flex flex-col justify-between">
+        
+        <div>
+            <!-- Encabezado Temático -->
+            <header class="bg-gradient-to-r from-teal-400 to-teal-500 p-6 text-white text-center rounded-xl relative overflow-hidden shadow-sm">
+                <!-- Iconos de baraja de fondo -->
+                <i class="fa-solid fa-chess-rook absolute -right-6 -top-6 opacity-15 text-8xl transform rotate-12"></i>
+                <i class="fa-solid fa-layer-group absolute -left-6 -bottom-6 opacity-15 text-8xl transform -rotate-12"></i>
+                
+                <div class="flex justify-center items-center gap-4 mb-1">
+                    <span class="text-3xl text-red-200">♥</span>
+                    <h1 class="text-4xl md:text-5xl font-bold handwriting drop-shadow-sm">Tu Gran Castillo de Naipes</h1>
+                    <span class="text-3xl text-teal-100">♠</span>
+                </div>
+                <p class="text-teal-50 text-base font-semibold tracking-wide flex justify-center items-center gap-2">
+                    <i class="fa-solid fa-book-open"></i> Una historia de aprendizaje para tu portafolio
+                </p>
+            </header>
+
+            <!-- Contenido Principal -->
+            <div class="mt-8 space-y-6 text-gray-700 text-base md:text-lg leading-relaxed relative">
+                
+                <!-- Recuadro para foto física (Polaroid) -->
+                <div class="absolute top-0 right-4 hidden md:block w-52 bg-white p-3 shadow-md border border-gray-150 rounded-sm transform rotate-[-2deg]">
+                    <div class="w-full h-32 bg-gray-50 border-2 border-dashed border-gray-300 rounded flex flex-col items-center justify-center text-center p-2">
+                        <i class="fa-solid fa-camera text-gray-300 text-3xl mb-1"></i>
+                        <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Pegar foto aquí</span>
+                    </div>
+                    <p class="text-center mt-2.5 handwriting text-xl text-teal-700 font-bold">¡Tú y las cartas!</p>
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 w-20 h-5 bg-yellow-200/50 rotate-1 shadow-sm"></div>
+                </div>
+
+                <!-- Saludo -->
+                <p class="text-3xl font-bold text-teal-800 handwriting flex items-center gap-2">
+                    Querida Paula <span class="text-red-400 text-2xl">♥</span>,
+                </p>
+
+                <!-- Introducción -->
+                <div class="flex items-start gap-4 max-w-[65%]">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 text-blue-600">
+                        <i class="fa-solid fa-binoculars text-lg"></i>
+                    </div>
+                    <p class="pt-0.5 text-sm md:text-base">
+                        Hoy te he observado mientras jugabas y quiero contarte sobre ello en esta carta. Me he dado cuenta de que estabas muy concentrada con una baraja de cartas.
+                    </p>
+                </div>
+
+                <!-- Caja de Observación Detallada -->
+                <div class="bg-orange-50/80 border-2 border-orange-200 p-5 rounded-xl shadow-sm relative">
+                    <div class="absolute -top-3.5 -left-3.5 w-8 h-8 bg-orange-100 border border-orange-200 rounded-full flex items-center justify-center text-base shadow-sm">
+                        💨
+                    </div>
+                    <p class="mb-3 pl-2 text-sm md:text-base">
+                        Vi que intentabas construir un verdadero castillo de naipes. Pude observar que las cartas se caían una y otra vez. Seguramente eso fue un poco frustrante a veces.
+                    </p>
+                    <div class="flex items-start gap-3 bg-white p-3.5 rounded-lg border border-orange-100">
+                        <span class="text-xl">💡</span>
+                        <p class="text-sm md:text-base">
+                            <strong>Pero, ¿sabes qué me pareció especialmente genial?</strong> ¡No te rendiste en absoluto! Lo seguiste intentando y pensaste en estrategias completamente nuevas. Apoyaste las cartas de una manera y luego de otra, para descubrir cómo se mantenían mejor en pie.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Proceso de aprendizaje -->
+                <div class="flex items-start gap-4">
+                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 text-green-600 text-xl">
+                        ⭐
+                    </div>
+                    <p class="pt-0.5 text-sm md:text-base">
+                        Incluso cuando no funcionó inmediatamente al principio, continuaste con mucha paciencia y perseverancia. Sé con certeza que, con esta gran tenacidad, algún día construirás exactamente el castillo de naipes que te gusta. ¡No te desesperes si algo nuevo no funciona enseguida, toda gran habilidad nueva simplemente necesita tiempo para crecer! Hoy, en tu primera vez, ya has logrado muchísimo. <strong class="text-green-700">¡Enhorabuena!</strong>
+                    </p>
+                </div>
+
+                <!-- Caja de Perspectiva Futura -->
+                <div class="bg-gradient-to-r from-teal-50 to-blue-50 p-4 rounded-xl border-l-4 border-teal-400">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl">🚀</span>
+                        <p class="italic text-sm md:text-base text-teal-900">
+                            Si quieres, mañana podemos pensar juntos si quizás hay algún truco para saber qué superficie es mejor para que un castillo de naipes no se resbale. ¿Te apetece?
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Sección de Despedida y Pie de Página -->
+        <div class="mt-8 space-y-6">
+            <div>
+                <p class="text-lg text-gray-500">Con mucho cariño,</p>
+                <p class="text-4xl font-bold text-teal-600 handwriting mt-1">Tu Alejandro</p>
+            </div>
+
+            <!-- Metadatos Pedagógicos -->
+            <footer class="border-t-2 border-teal-100/50 pt-4 flex justify-between items-center text-xs md:text-sm text-gray-500">
+                <div class="flex items-center gap-1.5 bg-white px-3.5 py-1.5 rounded-lg shadow-sm border border-gray-150">
+                    <span>📅</span>
+                    <strong>Fecha:</strong> <span class="font-bold text-gray-800">10.06.2026</span>
+                </div>
+                
+                <div class="flex items-center gap-1.5 bg-white px-3.5 py-1.5 rounded-lg shadow-sm border border-gray-150">
+                    <span>🎯</span>
+                    <span class="font-semibold text-gray-700">
+                        Disposiciones: <span class="text-teal-700 font-bold">Perseverancia</span> y <span class="text-orange-600 font-bold">Compromiso</span>
+                    </span>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+```
